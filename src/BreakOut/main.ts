@@ -37,8 +37,7 @@ function preload(this: Phaser.Scene) {
     this.load.image('brick', '/src/BreakOut/assets/brick.dio.png')
 
     // SEをロードします
-    this.load.audio('brickHit', '/src/BreakOut/assets/hit.mp3');
-  
+    this.load.audio('brickHit', '/src/BreakOut/assets/hit.mp3')
 }
 
 function create(this: Phaser.Scene) {
@@ -71,7 +70,7 @@ function create(this: Phaser.Scene) {
     }
 
     // コリジョンを設定します
-    this.physics.add.collider(ball, bricks, ((obj1, obj2)=>hitBrick(obj1, obj2, this)), undefined, this)
+    this.physics.add.collider(ball, bricks, (obj1, obj2) => hitBrick(obj1, obj2, this), undefined, this)
     this.physics.add.collider(ball, paddle, hitPaddle, undefined, this)
 
     // スペースキーでボールを発射します
@@ -152,4 +151,3 @@ function resetBall() {
     ball.setPosition(paddle.x, 500)
     ball.setData('onPaddle', true)
 }
-
